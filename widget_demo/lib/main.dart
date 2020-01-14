@@ -2,11 +2,22 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+  var customTextStyle = TextStyle(
+    color: Colors.greenAccent,
+    fontWeight: FontWeight.w800,
+    fontFamily: 'Roboto',
+    letterSpacing: 0.5,
+    fontSize: 50.0,
+  );
+  
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      // 右上の「DEBUG」を非表示にする
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -20,7 +31,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: MyHomePage(title: 'Flutter Widget Demo Home Page'),
+
+      home: Scaffold(
+        // Textの位置、フォントを指定
+        body: Center(child: Text("Hello Flutter!", style: customTextStyle)),
+      ),
     );
   }
 }
